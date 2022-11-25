@@ -22,10 +22,11 @@ export default function News(props) {
     };
 
     useEffect(() => {
-        document.title = `NewsX - ${props.category[0].toUpperCase() +
-            props.category.slice(1)} News`;
+        document.title = `NewsX - ${
+            props.category[0].toUpperCase() + props.category.slice(1)
+        } News`;
         pageUpdate();
-    }, []);
+    }, []); // eslint-disable-next-line
 
     const fetchMoreData = async () => {
         const url = `https://api.nytimes.com/svc/news/v3/content/all/${props.category}.json?api-key=
@@ -42,14 +43,8 @@ export default function News(props) {
     return (
         <div className="container" style={{ margin: "auto" }}>
             <h2 className="text-center" style={{ marginTop: "150px" }}>
-                {props.category
-                    .split("/")
-                    .pop()[0]
-                    .toUpperCase() +
-                    props.category
-                        .split("/")
-                        .pop()
-                        .slice(1)}{" "}
+                {props.category.split("/").pop()[0].toUpperCase() +
+                    props.category.split("/").pop().slice(1)}{" "}
                 Top Headlines
             </h2>
             <InfiniteScroll
