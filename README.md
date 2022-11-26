@@ -1,4 +1,4 @@
-NewX is simple news website written in ReactJs. It is a single page application which uses News API to fetch news from different sources. It is a responsive website which can be used on mobile devices as well. It is a progressive web app which can be installed on your mobile device.
+NewX is simple news website written in ReactJs. It is a single page application which uses New York Times API to fetch news. It is a responsive website which can be used on mobile devices as well.
 
 ## Installation
 
