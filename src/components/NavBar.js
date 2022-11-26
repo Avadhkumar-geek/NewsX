@@ -65,16 +65,6 @@ export default function NavBar() {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to={"/automobile"}>
-                                        Automobile
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to={"/politics"}>
-                                        Politics
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
                                     <Link className="nav-link" to={"/travel"}>
                                         Travel
                                     </Link>

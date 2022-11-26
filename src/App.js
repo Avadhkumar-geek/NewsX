@@ -23,11 +23,6 @@ function App() {
                         path="/technology"
                         element={<News key="technology" category="technology" />}
                     />
-                    <Route
-                        path="/automobile"
-                        element={<News key="science" category="automobile" />}
-                    />
-                    <Route path="/politics" element={<News key="science" category="politics" />} />
                     <Route path="/travel" element={<News key="science" category="travel" />} />
                 </Routes>
             </BrowserRouter>

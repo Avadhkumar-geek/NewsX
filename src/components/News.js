@@ -13,7 +13,7 @@ export default function News(props) {
 
     const pageUpdate = async () => {
         setLoading(true);
-        const url = `https://api.nytimes.com/svc/news/v3/content/all/${props.category}.json?api-key=
+        const url = `https://api.nytimes.com/svc/news/v3/content/nyt/${props.category}.json?api-key=
     ${process.env.REACT_APP_API_KEY}&offset=${page * 100}`;
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -53,9 +53,12 @@ export default function News(props) {
                 hasMore={page !== 5}
                 loader={<Spinner />}
                 endMessage={
-                    <div className="mt-5 position-relative">
+                    <div className="mt-5 ">
+                        <p style={{ textAlign: "center" }}>
+                            Made with <img src={heart} height="17px" alt="Love" /> by ΔVADH
+                        </p>
                         <a
-                            className="position-absolute start-0"
+                            className="d-flex justify-content-center"
                             href="https://developer.nytimes.com/"
                         >
                             <img
@@ -64,10 +67,6 @@ export default function News(props) {
                                 rel="noopener noreferrer"
                             />
                         </a>
-
-                        <p className="start-50" style={{ textAlign: "center" }}>
-                            Made with <img src={heart} height="17px" alt="Love" /> by ΔVADH
-                        </p>
                     </div>
                 }
             >
