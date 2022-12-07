@@ -8,7 +8,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository:
 
-Clone [this repo](https://github.com/Avadhkumar-geek/NewsX).
+```
+git clone https://github.com/Avadhkumar-geek/NewsX
+```
 
 2. Install the dependencies:
 
@@ -18,7 +20,9 @@ npm install
 
 3. Create a file called `.env` in the root of the project and add your New York Times API key:
 
-```REACT_APP_API_KEY=your-api-key```
+```
+REACT_APP_API_KEY=your-api-key
+```
 
 4. Run the project:
 
