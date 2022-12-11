@@ -55,7 +55,14 @@ export default function News(props) {
                 endMessage={
                     <div className="mt-5 ">
                         <p style={{ textAlign: "center" }}>
-                            Made with <img src={heart} height="17px" alt="Love" /> by ΔVADH
+                            Made with <img src={heart} height="17px" alt="Love" /> by
+                            <a
+                                className="text-decoration-none text-dark"
+                                href="https://github.com/Avadhkumar-geek/NewsX"
+                            >
+                                {" "}
+                                ΔVADH
+                            </a>
                         </p>
                         <a
                             className="d-flex justify-content-center"
