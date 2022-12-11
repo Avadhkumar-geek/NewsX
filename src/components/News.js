@@ -13,7 +13,7 @@ export default function News(props) {
 
     const pageUpdate = async () => {
         setLoading(true);
-        const url = `https://api.nytimes.com/svc/news/v3/content/nyt/${props.category}.json?api-key=
+        const url = `https://api.nytimes.com/svc/news/v3/content/all/${props.category}.json?api-key=
     ${process.env.REACT_APP_API_KEY}&offset=${page * 100}`;
         let data = await fetch(url);
         let parsedData = await data.json();
