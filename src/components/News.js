@@ -24,6 +24,7 @@ export default function News({ category, theme, textTheme }) {
     useEffect(() => {
         document.title = `NewsX - ${category[0].toUpperCase() + category.slice(1)} News`;
         pageUpdate();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []); // eslint-disable-next-line
 
     const fetchMoreData = async () => {
