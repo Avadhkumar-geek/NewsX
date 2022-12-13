@@ -6,14 +6,14 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import heart from "./imgs/heart.png";
 import nytBranding from "./imgs/nytBranding.png";
 
-export default function News(props) {
+export default function News({ category, theme, textTheme }) {
     const [articles, setArticles] = useState([]);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
 
     const pageUpdate = async () => {
         setLoading(true);
-        const url = `https://api.nytimes.com/svc/news/v3/content/all/${props.category}.json?api-key=
+        const url = `https://api.nytimes.com/svc/news/v3/content/all/${category}.json?api-key=
     ${process.env.REACT_APP_API_KEY}&offset=${(page - 1) * 20}`;
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -22,14 +22,12 @@ export default function News(props) {
     };
 
     useEffect(() => {
-        document.title = `NewsX - ${
-            props.category[0].toUpperCase() + props.category.slice(1)
-        } News`;
+        document.title = `NewsX - ${category[0].toUpperCase() + category.slice(1)} News`;
         pageUpdate();
     }, []); // eslint-disable-next-line
 
     const fetchMoreData = async () => {
-        const url = `https://api.nytimes.com/svc/news/v3/content/all/${props.category}.json?api-key=
+        const url = `https://api.nytimes.com/svc/news/v3/content/all/${category}.json?api-key=
     ${process.env.REACT_APP_API_KEY}&offset=${(page - 1) * 20}`;
         setPage(page + 1);
         let data = await fetch(url);
@@ -41,10 +39,9 @@ export default function News(props) {
         return <Spinner />;
     }
     return (
-        <div className="container" style={{ margin: "auto" }}>
+        <div className={`container ${theme} ${textTheme}`} style={{ margin: "auto" }}>
             <h2 className="text-center" style={{ marginTop: "150px" }}>
-                {props.category.split("/").pop()[0].toUpperCase() +
-                    props.category.split("/").pop().slice(1)}{" "}
+                {category.split("/").pop()[0].toUpperCase() + category.split("/").pop().slice(1)}{" "}
                 Top Headlines
             </h2>
             <InfiniteScroll
@@ -53,11 +50,11 @@ export default function News(props) {
                 hasMore={page !== 5}
                 loader={<Spinner />}
                 endMessage={
-                    <div className="mt-5 ">
+                    <div className={`mt-5`}>
                         <p style={{ textAlign: "center" }}>
                             Made with <img src={heart} height="17px" alt="Love" /> by
                             <a
-                                className="text-decoration-none text-dark"
+                                className={`text-decoration-none ${textTheme}`}
                                 href="https://github.com/Avadhkumar-geek/NewsX"
                             >
                                 {" "}
@@ -91,6 +88,8 @@ export default function News(props) {
                                 return (
                                     <div className="col-md-4 mt-3" key={content.url}>
                                         <NewsCard
+                                            theme={theme}
+                                            textTheme={textTheme}
                                             title={content.title}
                                             description={content.abstract}
                                             imgUrl={content.multimedia[2].url}
