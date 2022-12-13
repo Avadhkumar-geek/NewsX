@@ -20,6 +20,6 @@ code {
   background-color: #fff;
 }
 
-.dark-theme img {
-  filter: invert(100%);
+.dark-theme nav img {
+  filter: invert(1);
 }
