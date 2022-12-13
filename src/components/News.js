@@ -30,7 +30,7 @@ export default function News(props) {
 
     const fetchMoreData = async () => {
         const url = `https://api.nytimes.com/svc/news/v3/content/all/${props.category}.json?api-key=
-    ${process.env.REACT_APP_API_KEY}&offset=${(page + 1) * 100}`;
+    ${process.env.REACT_APP_API_KEY}&offset=${(page - 1) * 20}`;
         setPage(page + 1);
         let data = await fetch(url);
         let parsedData = await data.json();
