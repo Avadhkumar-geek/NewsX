@@ -2,6 +2,7 @@ import React from "react";
 import BrandLogo from "./imgs/brand.svg";
 import BrandName from "./imgs/brand2.svg";
 import gitHub from "./imgs/github.svg";
+import themeIcon from "./imgs/theme.png";
 import { Link } from "react-router-dom";
 
 export default function NavBar({ setTextTheme, setTheme, theme, textTheme }) {
@@ -32,9 +33,7 @@ export default function NavBar({ setTextTheme, setTheme, theme, textTheme }) {
                             role="switch"
                             id="flexSwitchCheckDefault"
                         />
-                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-                            Theme
-                        </label>
+                        <img src={themeIcon} alt="Theme" htmlFor="flexSwitchCheckDefault" />
                     </div>
                     <a
                         className="mx-3"
