@@ -3,9 +3,18 @@
   "name": "Simple News App",
   "icons": [
     {
-      "src": "brand.svg",
+      "src": "brandx72.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
+    },
+    {
+      "src": "brandx192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },{
+      "src": "brandx512.png",
+      "sizes": "512x512",
+      "type": "imaxge/png"
     }
   ],
   "start_url": ".",
