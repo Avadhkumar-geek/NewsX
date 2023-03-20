@@ -10,10 +10,6 @@ This project is a news website built using ReactJS and the New York Times API. T
 
 - Categories: The website has a top navigation bar with links to various categories of news. When a user clicks on a category, they are taken to a page that displays a list of articles from that specific category.
 
-- Search: The website has a search bar at the top of the page that allows users to search for articles based on keywords or specific sections of the New York Times. The search results page displays a list of articles that match the search criteria.
-
-- Article page: Each article has its own page that displays the full article, its details, and a list of related articles. The details of the article include the date it was published, the author, and the section it belongs to.
-
 - Responsive design: The website is designed to be responsive and adapt to different screen sizes and devices.
 
 ## Technology Used
